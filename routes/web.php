@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\irbaController;
+use App\Http\Controllers\biodataController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,26 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home',[
-        "title" => "home"
-    ]);
-});
-Route::get('/biodata', function () {
-    return view('biodata',[
-        "title" => "biodata",
-        "nama" => "Irba Adika Jaya",
-        "ttl" => "Malang, 12 Agustus 2002",
-        "jenkel" => "Laki-laki",
-        "agama" => "Islam",
-        "alamat" => "Jalan Ki Ageng Gribig I/37A",
-        "telepon" => "081217537602",
-        "email" => "irbaadika123@gmail.com",
-        "status" => "Mahasiswa"
-    ]);
-});
-Route::get('/komentar', function () {
-    return view('komentar',[
-        "title" => "komentar"
-    ]);
-});
+Route::get('/', [irbaController::class,'index']);
+Route::get('/biodata', [biodataController::class,'biodata']);
+Route::get('/komentar', [komentarController::class,'komentar']);

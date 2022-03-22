@@ -11,28 +11,14 @@
     <title>{{ $title }}</title>
   </head>
   <body>
-      <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+    @include('partials.navi')
         <div class="container">
-          <a class="navbar-brand fw-bold" href="#">Irba</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link {{ ($title === "home") ? 'active' : '' }}"  href="http://127.0.0.1:8000/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {{ ($title === "biodata") ? 'active' : '' }}" href="http://127.0.0.1:8000/biodata">Biodata</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {{ ($title === "komentar") ? 'active' : '' }}" href="http://127.0.0.1:8000/komentar">Komentar</a>
-              </li>
-            </ul>
-          </div>
+          
+          
+          @yield('content')
         </div>
-      </nav>
-      @yield('content')
+      
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>
