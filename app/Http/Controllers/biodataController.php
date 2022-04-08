@@ -9,15 +9,15 @@ class biodataController extends Controller
 {
     public function biodata(){
         return view('biodata',[
-            "title" => "biodata",
-            "nama" => biodata::getNama(),
-            "ttl" => biodata::getTtl(),
-            "jenkel" => biodata::getJenkel(),
-            "agama" => biodata::getAgama(),
-            "alamat" => biodata::getAlamat(),
-            "telepon" => biodata::getTelepon(),
-            "email" => biodata::getEmail(),
-            "status" => biodata::getStatus()
+            "title" => biodata::first()->title,
+            "nama" => biodata::first()->nama,
+            "ttl" => biodata::first()->ttl,
+            "jenkel" => biodata::first()->jenkel,
+            "agama" => biodata::first()->agama,
+            "alamat" => biodata::first()->alamat,
+            "telepon" => biodata::first()->telepon,
+            "email" => biodata::first()->email,
+            "status" => biodata::first()->status
         ]);  
     }
 }
